@@ -25,7 +25,7 @@
                 </div>
             {% endif %}
             <div>
-                <strong>{% trans "Menu:" %}</strong>
+                {% comment %} <strong>{% trans "Menu:" %}</strong> {% endcomment %}
                 <ul>
                     {% if user.is_authenticated %}
                         {% url 'account_email' as email_url_ %}
@@ -65,7 +65,7 @@
                             </li>
                         {% endif %}
                     {% else %}
-                        {% url 'account_login' as login_url_ %}
+                        {% comment %} {% url 'account_login' as login_url_ %}
                         {% if login_url_ %}
                             <li>
                                 <a href="{{ login_url_ }}">{% trans "Sign In" %}</a>
@@ -76,7 +76,7 @@
                             <li>
                                 <a href="{{ signup_url_ }}">{% trans "Sign Up" %}</a>
                             </li>
-                        {% endif %}
+                        {% endif %} {% endcomment %}
                     {% endif %}
                 </ul>
             </div>

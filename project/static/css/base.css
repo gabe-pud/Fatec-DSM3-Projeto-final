@@ -10,24 +10,33 @@ form label{
 }
 
 form #id_login{
-    @apply w-full rounded-xl border-1 border-[#7083D9] py-4 pr-12 text-xl pl-5 mb-4
+    @apply w-full rounded-xl border border-[#7083D9] py-4 pr-12 text-xl pl-5 mb-4
 }
 
 form #id_password{
-    @apply w-full rounded-xl border-1 border-[#7083D9] py-4 pr-12 text-xl pl-5 
+    @apply w-full rounded-xl border border-[#7083D9] py-4 pr-12 text-xl pl-5 
 }
 
 form button{
     @apply w-full py-4 bg-[#7083D9] rounded-xl text-white font-medium text-xl cursor-pointer
 }
 
-form label[for="id_remember"],form input[type="checkbox"]{
-    @apply inline mb-10
+form label[for="id_remember"]{
+    @apply inline mb-10 
 }
 
-a[title="Google"]{
-    @apply w-full py-4 bg-transparent rounded-xl text-black font-medium text-xl border-1 border-[#7083D9] cursor-pointer flex flex-row justify-center items-center gap-2
+form input[type="checkbox"]{
+    @apply inline mb-10 cursor-pointer transition-all shadow hover:shadow-md border border-slate-300 bg-white checked:bg-[#7083D9] checked:border-[#7083D9]
 }
+
+ul{
+    @apply w-full
+}
+
+a[title="Google"] {
+  @apply w-full py-4 bg-transparent rounded-xl text-black font-medium text-xl border border-[#7083D9] cursor-pointer flex flex-row justify-center items-center gap-2;
+}
+
 
 #id_password_helptext a{
     @apply block text-right w-full text-[#7083D9] font-semibold cursor-pointer mb-4

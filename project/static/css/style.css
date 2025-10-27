@@ -226,6 +226,9 @@
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
+  .max-h-screen {
+    max-height: 100vh;
+  }
   .min-h-screen {
     min-height: 100vh;
   }
@@ -279,6 +282,9 @@
   .gap-6 {
     gap: calc(var(--spacing) * 6);
   }
+  .overflow-y-scroll {
+    overflow-y: scroll;
+  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
@@ -292,6 +298,24 @@
   }
   .px-6 {
     padding-inline: calc(var(--spacing) * 6);
+  }
+  .py-11 {
+    padding-block: calc(var(--spacing) * 11);
+  }
+  .py-12 {
+    padding-block: calc(var(--spacing) * 12);
+  }
+  .py-13 {
+    padding-block: calc(var(--spacing) * 13);
+  }
+  .py-13\.5 {
+    padding-block: calc(var(--spacing) * 13.5);
+  }
+  .py-14 {
+    padding-block: calc(var(--spacing) * 14);
+  }
+  .py-14\.5 {
+    padding-block: calc(var(--spacing) * 14.5);
   }
   .text-center {
     text-align: center;
@@ -310,12 +334,6 @@
   .text-xl {
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
-  }
-  .text-\[10px\] {
-    font-size: 10px;
-  }
-  .text-\[15px\] {
-    font-size: 15px;
   }
   .text-\[16px\] {
     font-size: 16px;
@@ -396,7 +414,7 @@ form label {
   font-size: var(--text-xl);
   line-height: var(--tw-leading, var(--text-xl--line-height));
 }
-form #id_login {
+form #id_login, #id_email, #id_password1, #id_username, #id_password2 {
   margin-bottom: calc(var(--spacing) * 4);
   width: 100%;
   border-radius: var(--radius-xl);
@@ -504,6 +522,13 @@ a[title="Google"] {
 }
 .not_account_yet a {
   color: #7083D9;
+}
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    display: none;
+  }
 }
 @property --tw-translate-x {
   syntax: "*";

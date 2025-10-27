@@ -109,6 +109,8 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
+ACCOUNT_AUTHENTICATION_METHOD="email"
+ACCOUNT_EMAIL_REQUIRED=True
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 

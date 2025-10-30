@@ -6,7 +6,7 @@
 {% endblock head_title %}
 {% block content %}
 <main class="flex flex-row lg:min-h-screen items-center justify-center">
-    <section class="w-full max-w-[600px] px-6 flex flex-col items-center min-h-screen overflow-y-scroll max-h-screen py-11 scrollbar">
+    <section class="w-full max-w-[600px] px-6 flex flex-col items-center min-h-screen overflow-y-scroll max-h-screen py-9 scrollbar">
             <h1 class="text-7xl lg:text-8xl font-bold text-center leading-[0.8]">
             <span class="block">Crie</span>
             <span class="block -mt-2">sua conta</span>
@@ -17,6 +17,8 @@
             
     {% if not SOCIALACCOUNT_ONLY %}
         {% url 'account_signup' as action_url %}
+
+        
         {% element form form=form method="post" action=action_url tags="entrance,signup" %}
             {% slot body %}
                 {% csrf_token %}
@@ -25,7 +27,7 @@
                 {{ redirect_field }}
             {% endslot %}
             {% slot actions %}
-                {% element button tags="prominent,signup" type="submit" %}
+                {% element button tags="prominent,signup" type="submit" class="btn-signup" id="btn-signup" %}
                     {% trans "Sign Up" %}
                 {% endelement %}
             {% endslot %}
@@ -55,12 +57,12 @@
     <section
         class="hidden lg:flex lg:flex-col lg:items-center lg:justify-center lg:flex-1 bg-[#7083D9] min-h-screen">
         <img
-          src="{% static 'assets/svg/image1.svg' %}"
+          src="{% static 'assets/svg/image2.svg' %}"
           alt="Ilustração"
           class="w-2xl"
         />
         <h2 class="text-4xl text-white">
-          O primeiro passo para uma cidade limpa é seu
+          Pequenas atitudes, grandes mudanças
         </h2>
     </section>
 </main>

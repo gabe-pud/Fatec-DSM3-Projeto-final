@@ -190,9 +190,6 @@
   .static {
     position: static;
   }
-  .top-1 {
-    top: calc(var(--spacing) * 1);
-  }
   .top-1\/2 {
     top: calc(1/2 * 100%);
   }
@@ -220,9 +217,6 @@
   .hidden {
     display: none;
   }
-  .table {
-    display: table;
-  }
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
@@ -247,13 +241,6 @@
   .max-w-\[600px\] {
     max-width: 600px;
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .-translate-y-1 {
-    --tw-translate-y: calc(var(--spacing) * -1);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
   .-translate-y-1\/2 {
     --tw-translate-y: calc(calc(1/2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
@@ -263,9 +250,6 @@
   }
   .cursor-pointer {
     cursor: pointer;
-  }
-  .resize {
-    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -285,10 +269,6 @@
   .overflow-y-scroll {
     overflow-y: scroll;
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
   .border-b-2 {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 2px;
@@ -299,23 +279,8 @@
   .px-6 {
     padding-inline: calc(var(--spacing) * 6);
   }
-  .py-11 {
-    padding-block: calc(var(--spacing) * 11);
-  }
-  .py-12 {
-    padding-block: calc(var(--spacing) * 12);
-  }
-  .py-13 {
-    padding-block: calc(var(--spacing) * 13);
-  }
-  .py-13\.5 {
-    padding-block: calc(var(--spacing) * 13.5);
-  }
-  .py-14 {
-    padding-block: calc(var(--spacing) * 14);
-  }
-  .py-14\.5 {
-    padding-block: calc(var(--spacing) * 14.5);
+  .py-9 {
+    padding-block: calc(var(--spacing) * 9);
   }
   .text-center {
     text-align: center;
@@ -358,13 +323,6 @@
   }
   .text-white {
     color: var(--color-white);
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .lg\:flex {
     @media (width >= 64rem) {
@@ -414,8 +372,20 @@ form label {
   font-size: var(--text-xl);
   line-height: var(--tw-leading, var(--text-xl--line-height));
 }
-form #id_login, #id_email, #id_password1, #id_username, #id_password2 {
+form #id_login, #id_email, #id_username {
   margin-bottom: calc(var(--spacing) * 4);
+  width: 100%;
+  border-radius: var(--radius-xl);
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+  border-color: #7083D9;
+  padding-block: calc(var(--spacing) * 4);
+  padding-right: calc(var(--spacing) * 12);
+  padding-left: calc(var(--spacing) * 5);
+  font-size: var(--text-xl);
+  line-height: var(--tw-leading, var(--text-xl--line-height));
+}
+form #id_password1, #id_password2 {
   width: 100%;
   border-radius: var(--radius-xl);
   border-style: var(--tw-border-style);
@@ -440,6 +410,19 @@ form #id_password {
   line-height: var(--tw-leading, var(--text-xl--line-height));
 }
 form button {
+  width: 100%;
+  cursor: pointer;
+  border-radius: var(--radius-xl);
+  background-color: #7083D9;
+  padding-block: calc(var(--spacing) * 4);
+  font-size: var(--text-xl);
+  line-height: var(--tw-leading, var(--text-xl--line-height));
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-white);
+}
+form #btn-signup {
+  margin-top: calc(var(--spacing) * 14);
   width: 100%;
   cursor: pointer;
   border-radius: var(--radius-xl);
@@ -578,11 +561,6 @@ a[title="Google"] {
   syntax: "*";
   inherits: false;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-shadow {
   syntax: "*";
   inherits: false;
@@ -662,7 +640,6 @@ a[title="Google"] {
       --tw-border-style: solid;
       --tw-leading: initial;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
       --tw-shadow: 0 0 #0000;
       --tw-shadow-color: initial;
       --tw-shadow-alpha: 100%;

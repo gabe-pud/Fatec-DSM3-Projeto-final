@@ -26,7 +26,7 @@ form button{
 }
 
 form #btn-signup{
-    @apply w-full py-4 bg-[#7083D9] rounded-xl text-white font-medium text-xl cursor-pointer mt-14
+    @apply w-full py-4 bg-[#7083D9] rounded-xl text-white font-medium text-xl cursor-pointer mt-12
 }
 
 form label[for="id_remember"]{
@@ -43,6 +43,10 @@ ul{
 
 a[title="Google"] {
   @apply w-full py-4 bg-transparent rounded-xl text-black font-medium text-xl border border-[#7083D9] cursor-pointer flex flex-row justify-center items-center gap-2;
+}
+
+#id_password1_error{
+    @apply block text-right w-full text-[#7083D9] font-semibold cursor-pointer mb-4
 }
 
 

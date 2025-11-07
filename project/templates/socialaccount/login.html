@@ -1,0 +1,47 @@
+{% extends "socialaccount/base_entrance.html" %}
+{% load i18n %}
+{% load allauth %}
+{% load static %}
+{% block head_title %}
+    {% trans "Sign In" %}
+{% endblock head_title %}
+{% block content %}
+<main class="flex flex-row lg:min-h-screen items-center justify-center">
+    <section class="w-full max-w-[600px] px-6 flex flex-col items-center justify-center min-h-screen overflow-y-scroll max-h-screen py-9 scrollbar">
+        {% if process == "connect" %}
+            <h1 class="text-7xl lg:text-8xl font-bold text-center">
+                {% blocktrans with provider.name as provider %}Connect {{ provider }}{% endblocktrans %}
+            </h1>
+            {% element p %}
+                {% blocktrans with provider.name as provider %}You are about to connect a new third-party account from {{ provider }}.{% endblocktrans %}
+            {% endelement %}
+        {% else %}
+            <h1 class="text-7xl lg:text-8xl font-bold text-center">
+                {% blocktrans with provider.name as provider %}Sign In Via {{ provider }}{% endblocktrans %}
+            </h1>
+            <p class="text-center mt-10 font-semibold">
+                {% blocktrans with provider.name as provider %}You are about to sign in using a third-party account from {{ provider }}.{% endblocktrans %}
+            </p>
+        {% endif %}
+        {% element form method="post" no_visible_fields=True %}
+            {% slot actions %}
+                {% csrf_token %}
+                {% element button type="submit" %}
+                    {% trans "Continue" %}
+                {% endelement %}
+            {% endslot %}
+        {% endelement %}
+    </section>
+    <section
+        class="hidden lg:flex lg:flex-col lg:items-center lg:justify-center lg:flex-1 bg-[#7083D9] min-h-screen">
+        <img
+          src="{% static 'assets/svg/image1.svg' %}"
+          alt="Ilustração"
+          class="w-2xl"
+        />
+        <h2 class="text-4xl text-white">
+          O primeiro passo para uma cidade limpa é seu
+        </h2>
+    </section>
+</main>
+{% endblock content %}

@@ -422,7 +422,7 @@ form button {
   color: var(--color-white);
 }
 form #btn-signup {
-  margin-top: calc(var(--spacing) * 14);
+  margin-top: calc(var(--spacing) * 12);
   width: 100%;
   cursor: pointer;
   border-radius: var(--radius-xl);
@@ -486,6 +486,16 @@ a[title="Google"] {
   --tw-font-weight: var(--font-weight-medium);
   font-weight: var(--font-weight-medium);
   color: var(--color-black);
+}
+#id_password1_error {
+  margin-bottom: calc(var(--spacing) * 4);
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  text-align: right;
+  --tw-font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-semibold);
+  color: #7083D9;
 }
 #id_password_helptext a {
   margin-bottom: calc(var(--spacing) * 4);
